@@ -1,7 +1,14 @@
 package com.Selenium.Module1;
 
+/**
+ * @author CoryZ
+ * Test that tests basic functionality of the Amazon search bar and Amazon cart using JUnit annotations. 
+ * Test will pass if an item is added successfully to the cart and will fail if no item is added 
+ * to the cart.
+ */
 
 import org.junit.After;
+
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
@@ -47,6 +54,7 @@ public class Amazon_Junit_Tests {
 		testRun.search("Persona 5");
 		testRun.returnSearch();
 		testRun.clickResult();
+		//Uncomment or Comment below step to pass or fail test
 		//testRun.addToCart();
 		testRun.verifyCartNotEmpty();
 

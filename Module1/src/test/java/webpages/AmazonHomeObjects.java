@@ -7,6 +7,10 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+/**
+ * @author CoryZ
+ * Amazon home page objects and locators for method steps.
+ */
 public class AmazonHomeObjects {
 
 	WebDriver driver;
@@ -25,12 +29,18 @@ public class AmazonHomeObjects {
 	static By addToCart = By.xpath("//*[@id = 'add-to-cart-button']");
 	static By emptyCart = By.xpath("//*[@id = 'nav-cart-count']");
 
-	//Methods for Amazon
+	/**
+	 * @author CoryZ
+	 * Below are methods for Amazon page navigation
+	 */
+	
+	//Method that sends user input into the Amazon search bar
 	public void search(String searchText) {
 		driver.findElement(txtbox_search).clear();
 		driver.findElement(txtbox_search).sendKeys(searchText);		
 	}
-
+	
+	//Method that submits whatever is written in the search bar. Will fail if search bar is empty.
 	public void returnSearch() {
 		driver.findElement(txtbox_search).submit();
 		String sum = driver.findElement(txtbox_search).getAttribute("value");
@@ -41,14 +51,17 @@ public class AmazonHomeObjects {
 		}
 	}
 	
+	//Method that will click the first product in a returned Amazon search
 	public void clickResult() {
 		driver.findElement(firstResult).click();
 	}
 	
+	//Method to click on the add to cart button
 	public void addToCart() {
 		driver.findElement(addToCart).click();
 	}
 
+	//Method that verifies that the cart is not empty. If it is found empty, step will fail
 	public void verifyCartNotEmpty() {
 		String empty = driver.findElement(emptyCart).getAttribute("class");
 		
@@ -58,7 +71,6 @@ public class AmazonHomeObjects {
 			test.log(LogStatus.PASS, "Cart contains items");
 		}
 	}
-
 
 	public void flushTest() {
 		report.endTest(test);

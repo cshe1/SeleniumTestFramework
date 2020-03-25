@@ -1,5 +1,10 @@
 package com.Selenium.Module1;
 
+/**
+ * @author CoryZ
+ * Test that tests functionality of Google Search bar using Junit annotations.
+ */
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -37,7 +42,7 @@ static GoogleHomeObjects testRun;
 		testRun.returnSearch();
 		testRun.clickResult();
 		
-		//Uncomment below to showcase failing testcase
+		//Uncomment below to show failing testcase
 		//testRun.navNewPage("https://google.com");
 		//testRun.verifyNewPage();
 	}

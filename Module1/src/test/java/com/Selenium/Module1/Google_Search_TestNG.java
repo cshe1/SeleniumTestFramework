@@ -1,5 +1,11 @@
 package com.Selenium.Module1;
 
+/**
+ * @author CoryZ
+ * 
+ * Test that tests functionality of the Google Search bar using TestNG annotations
+ */
+
 import org.openqa.selenium.WebDriver;
 
 
